@@ -1,100 +1,66 @@
-# trial
+# Express Boilerplate
 
-This application was generated using JHipster 5.8.2, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.8.2](https://www.jhipster.tech/documentation-archive/v5.8.2).
+ExpressJS boilerplate with Socket.IO, Mongoose for scalable projects.
 
-## Development
+### Includes
 
-To start your application in the dev profile, simply run:
+- [ExpressJS](https://expressjs.com)
+- [NodeJS](https://nodejs.org/en/)
+- [Mongoose](http://mongoosejs.com/docs/guide.html)
+- [Socket.io](https://socket.io/docs)
+- [Nodemon](https://nodemon.io/)
+- [API-Docs](http://apidocjs.com)
 
-    ./mvnw
+## Getting Started
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Doing API-First development using openapi-generator
-
-[OpenAPI-Generator]() is configured for this application. You can generate API code from the `src/main/resources/swagger/api.yml` definition file by running:
+### Prerequisites
 
 ```bash
-./mvnw generate-sources
+#!/bin/bash
+Node@v10.x.x
 ```
 
-Then implements the generated delegate classes with `@Service` classes.
+### Installing
 
-To edit the `api.yml` definition file, you can use a tool such as [Swagger-Editor](). Start a local instance of the swagger-editor using docker by running: `docker-compose -f src/main/docker/swagger-editor.yml up -d`. The editor will then be reachable at [http://localhost:7742](http://localhost:7742).
+A step by step series that will tell you how to get a development env running
 
-Refer to [Doing API-First development][] for more details.
-
-## Building for production
-
-To optimize the trial application for production, run:
-
-    ./mvnw -Pprod clean package
-
-To ensure everything worked, run:
-
-    java -jar target/*.war
-
-Refer to [Using JHipster in production][] for more details.
-
-## Testing
-
-To launch your application's tests, run:
-
-    ./mvnw clean test
-
-For more information, refer to the [Running tests page][].
-
-### Code quality
-
-Sonar is used to analyse code quality. You can start a local Sonar server (accessible on http://localhost:9001) with:
-
-```
-docker-compose -f src/main/docker/sonar.yml up -d
+```bash
+#!/bin/bash
+$ git clone https://github.com/imbudhiraja/express-boilerplate.git
+$ cd express-boilerplate
 ```
 
-Then, run a Sonar analysis:
-
+```node
+#!/.nvm/versions/node/v10.x.x/bin/node
+$ npm ci
 ```
-./mvnw -Pprod clean test sonar:sonar
+
+### Useful Scripts
+
+| Script | Description |
+| ------ | ------ |
+| npm start | Starts development server at localhost:3001 and socket server at localhost:3002 |
+| npm run lint | Run Eslint to find out linting issues. |
+| npm run docs | Create API docs. checkout APIs at - localhost:3001/v1/docs |
+| npm run docs-postman | Create API docs [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) file to import to [Postman](https://www.getpostman.com) |
+
+### Run at local server
+
+```bash
+touch .env
+nano .env
+NODE_ENV=development
+
+npm run start
+http://localhost:3001/
 ```
 
-For more information, refer to the [Code quality page][].
+### Check Server Status
+Once server has started run http://localhost:3001/v1/status.
 
-## Using Docker to simplify development (optional)
+## [Issues](https://github.com/imbudhiraja/express-boilerplate.git/issues)
+### [LICENSE](https://github.com/imbudhiraja/express-boilerplate/blob/master/LICENSE)
 
-You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
 
-For example, to start a mongodb database in a docker container, run:
-
-    docker-compose -f src/main/docker/mongodb.yml up -d
-
-To stop it and remove the container, run:
-
-    docker-compose -f src/main/docker/mongodb.yml down
-
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a docker image of your app by running:
-
-    ./mvnw package -Pprod verify jib:dockerBuild
-
-Then run:
-
-    docker-compose -f src/main/docker/app.yml up -d
-
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[jhipster homepage and latest documentation]: https://www.jhipster.tech
-[jhipster 5.8.2 archive]: https://www.jhipster.tech/documentation-archive/v5.8.2
-[using jhipster in development]: https://www.jhipster.tech/documentation-archive/v5.8.2/development/
-[using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v5.8.2/docker-compose
-[using jhipster in production]: https://www.jhipster.tech/documentation-archive/v5.8.2/production/
-[running tests page]: https://www.jhipster.tech/documentation-archive/v5.8.2/running-tests/
-[code quality page]: https://www.jhipster.tech/documentation-archive/v5.8.2/code-quality/
-[setting up continuous integration]: https://www.jhipster.tech/documentation-archive/v5.8.2/setting-up-ci/
-[openapi-generator]: https://openapi-generator.tech
-[swagger-editor]: http://editor.swagger.io
-[doing api-first development]: https://www.jhipster.tech/documentation-archive/v5.8.2/doing-api-first-development/
